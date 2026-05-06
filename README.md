@@ -22,4 +22,4 @@ You need to import the header files, static libraries and platform package code 
 
 
 # For more information about rbfsdk, please refer to：
-http://111.229.174.251/rbfsdk/html/index.html
+https://zhengfangdusun.github.io/rbfsdk_mt76x8/
