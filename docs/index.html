@@ -82,47 +82,55 @@ This is a SDK for RBF module</h1>
 <hr  />
  <h1><a class="anchor" id="autotoc_md3"></a>
 3 RBF SDK Quick Start Guide</h1>
-<p>The RBF SDK implements a specialized physical network protocol for security purposes. It categorizes all security devices into I/O, sounder, keypad, and FOB categories. Each category includes multiple distinct device types. For example, I/O devices encompass most security sensors and control devices such as water leak sensors, temperature and humidity sensors, smart plugs, water valves, etc. The relationship between device categories and device types is shown in the table below：</p>
-<table class="doxtable">
-<tr>
-<td>Device category </td><td>Device Type  </td></tr>
-<tr>
-<td rowspan="11" colspan="1">I/0 </td><td>Magnetic  </td></tr>
-<tr>
-<td>PIR  </td></tr>
-<tr>
-<td>Water leak  </td></tr>
-<tr>
-<td>Fixed Emergency Button  </td></tr>
-<tr>
-<td>Port Emergency Button  </td></tr>
-<tr>
-<td>Smoke  </td></tr>
-<tr>
-<td>Temperature and humidity sensor  </td></tr>
-<tr>
-<td>Smart Plug  </td></tr>
-<tr>
-<td>Relay  </td></tr>
-<tr>
-<td>Wall Switch  </td></tr>
-<tr>
-<td>Water Valve  </td></tr>
-<tr>
-<td rowspan="2" colspan="1">Sounder </td><td>Indoor Siren  </td></tr>
-<tr>
-<td>Outdoor Sounder  </td></tr>
-<tr>
-<td>KeyPad </td><td>Keypad  </td></tr>
-<tr>
-<td>KeyFob </td><td>Keyfob  </td></tr>
+<p>The RBF SDK implements a specialized physical network protocol for security purposes. It categorizes sub-devices into I/O, sounder, keypad, keyfob, and repeater categories. Each category includes multiple device types. For example, I/O devices encompass most security sensors and control devices such as magnetic sensors, indoor/outdoor PIR sensors, water leak sensors, temperature and humidity sensors, smart plugs, relays, wall switches, water valves, and wired-to-wireless converters.</p>
+<p>The relationship between public device categories and sub-device types is shown in the table below:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Device category </th><th class="markdownTableHeadNone">Device type enum </th><th class="markdownTableHeadNone">Device type  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_MC</code> </td><td class="markdownTableBodyNone">Door magnetic sensor  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_PIR</code> </td><td class="markdownTableBodyNone">Indoor PIR sensor  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_WATERT_LEAK</code> </td><td class="markdownTableBodyNone">Water leak sensor  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_FIXED_PA</code> </td><td class="markdownTableBodyNone">Fixed emergency button  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_PORT_PA</code> </td><td class="markdownTableBodyNone">Portable emergency button  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_SMOKE</code> </td><td class="markdownTableBodyNone">Smoke detector  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_TEMP_HUMI</code> </td><td class="markdownTableBodyNone">Temperature and humidity sensor  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_SMART_PLUG</code> </td><td class="markdownTableBodyNone">Smart plug  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_RELAY</code> </td><td class="markdownTableBodyNone">Weak relay  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_WALL_SWITCH</code> </td><td class="markdownTableBodyNone">Strong relay / wall switch  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_WATER_VALVE</code> </td><td class="markdownTableBodyNone">Water valve  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_OUT_PIR</code> </td><td class="markdownTableBodyNone">Outdoor PIR sensor  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">I/O </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_WIRED_TO_WIRELESS</code> </td><td class="markdownTableBodyNone">Wired-to-wireless converter  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Sounder </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_INDOOR_SIREN</code> </td><td class="markdownTableBodyNone">Indoor siren  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Sounder </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_OUT_SOUND</code> </td><td class="markdownTableBodyNone">Outdoor siren / outdoor sounder  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Keypad </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_LED_KEYPAD</code> </td><td class="markdownTableBodyNone">LED keypad  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Keyfob </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_KEYFOB</code> </td><td class="markdownTableBodyNone">Keyfob / remote controller  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Repeater </td><td class="markdownTableBodyNone"><code>RBF_DEV_TYPE_REPEATER</code> </td><td class="markdownTableBodyNone">Repeater  </td></tr>
 </table>
+<p>Compared with earlier SDK revisions, PIR and sounder support is split into dedicated indoor/outdoor public headers: <code><a class="el" href="rbf__indoor__pir_8h.html" title="Indoor PIR motion sensor API — heartbeat, input events, tamper/fault status, and sensitivity configur...">rbf_indoor_pir.h</a></code>, <code><a class="el" href="rbf__outdoor__pir_8h.html" title="Outdoor PIR motion sensor API — heartbeat, input events, tamper/fault status, and sensitivity configu...">rbf_outdoor_pir.h</a></code>, <code><a class="el" href="rbf__indoor__siren_8h.html" title="Indoor siren device API — heartbeat, input status, volume control, alarm action/mode,...">rbf_indoor_siren.h</a></code>, and <code><a class="el" href="rbf__outdoor__siren_8h.html" title="Outdoor siren device API — heartbeat, input status (power/solar/battery/tamper), volume control,...">rbf_outdoor_siren.h</a></code>. Newer public device types also include outdoor PIR, wired-to-wireless converter, and repeater.</p>
 <p>Through the RBF SDK, users can easily access and operate security alarm sub-devices, such as collecting door magnetic switch status, sending audio-visual alarm commands to sounders, arming all PIR sensors, and more. The framework of the SDK is as shown in the following diagram:<br  />
  <img src="./image/framework.png" alt="framework" width="800" class="inline"/></p>
 <p>The following presents some core concepts within the RBF protocol stack, which are mentioned in interface descriptions, helping users better understand and utilize RBF SDK interfaces.</p>
 <ol type="1">
 <li>Device Addressing <br  />
- The RBF protocol stack accesses devices via <em>device category</em> and <em>number</em>, where the device category is one of I/O, sounder, keypad, or FOB. Numbers are automatically assigned by the hub during network entry, and they are independent within each category. Users can obtain device numbers through registering a network entry callback function.</li>
+ The RBF protocol stack accesses devices via <em>device category</em> and <em>number</em>, where the device category is one of I/O, sounder, keypad, keyfob, or repeater. Numbers are automatically assigned by the hub during network entry, and they are independent within each category. Users can obtain device numbers through registering a network entry callback function.</li>
 <li>Broadcasting <br  />
  The RBF protocol stack supports synchronous and regular broadcasts.</li>
 </ol>
@@ -212,34 +220,40 @@ This is a SDK for RBF module</h1>
 <p>Note: IO arming and disarming is only effective for sensitive sensors such as infrared. It is invalid for 24-hour alarm sub-devices such as smoke sensors and door magnets. Whether an alarm is required depends on the application itself.</p>
 <h3><a class="anchor" id="autotoc_md18"></a>
 3.6.3 RBF Sub-devices</h3>
-<ul>
-<li>Emergency Button <br  />
- Please refer to <a class="el" href="rbf__emergency__button_8h.html" title="Emergency Button.">rbf_emergency_button.h</a> for information on emergency button control interfaces.</li>
-<li>Remote Controller <br  />
- Please refer to <a class="el" href="rbf__keyfob_8h.html" title="Remote Control.">rbf_keyfob.h</a> for information on remote controller control interfaces.</li>
-<li>Keypad <br  />
- Please refer to <a class="el" href="rbf__keypad_8h.html" title="Keypad device API — heartbeat, alarm status, key input, settings, and action control.">rbf_keypad.h</a> for information on keypad control interfaces.</li>
-<li>Relay <br  />
- Please refer to <a class="el" href="rbf__relay_8h.html" title="Weak relay device API — heartbeat, output status, configuration, and on/off control.">rbf_relay.h</a> for information on relay control interfaces.</li>
-<li>Wall switch <br  />
- Please refer to <a class="el" href="rbf__wall__switch_8h.html" title="Wall switch (strong relay) device API — heartbeat with electrical measurements, output status,...">rbf_wall_switch.h</a> for information on wall switch control interfaces.</li>
-<li>Smartplug <br  />
- Please refer to <a class="el" href="rbf__smartplug_8h.html" title="Smart plug device API — heartbeat with electrical measurements, output status, configuration,...">rbf_smartplug.h</a> for information on smartplug control interfaces.</li>
-<li>Door Magnetic Sensor <br  />
- Please refer to <a class="el" href="rbf__magnetic_8h.html" title="Door Magnetic Sensor.">rbf_magnetic.h</a> for information on door magnetic sensor control interfaces.</li>
-<li>Infrared Sensor <br  />
- Please refer to rbf_pir.h for information on infrared sensor control interfaces.</li>
-<li>Smoke Detector <br  />
- Please refer to <a class="el" href="rbf__smoke_8h.html" title="Smoke sensor.">rbf_smoke.h</a> for information on smoke detector control interfaces.</li>
-<li>Outdoor Sounder <br  />
- Please refer to rbf_sounder.h for information on outdoor sounder control interfaces.</li>
-<li>Indoor Siren <br  />
- Please refer to <a class="el" href="rbf__indoor__siren_8h.html" title="Indoor siren device API — heartbeat, input status, volume control, alarm action/mode,...">rbf_indoor_siren.h</a> for information on indoor siren control interfaces.</li>
-<li>Temperature and Humidity Sensor <br  />
- Please refer to <a class="el" href="rbf__temphumi_8h.html" title="Temperature and humidity sensor API — heartbeat with temp/humi readings, threshold alarms,...">rbf_temphumi.h</a> for information on temperature and humidity sensor control interfaces.</li>
-<li>Water Leak Sensor <br  />
- Please refer to <a class="el" href="rbf__water__leak_8h.html" title="Water Leak Sensor.">rbf_water_leak.h</a> for information on water leak sensor control interfaces.</li>
-</ul>
+<p>The public sub-device headers under <code>app/include</code> provide the following device-specific callback and control interfaces:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Sub-device </th><th class="markdownTableHeadNone">Header </th><th class="markdownTableHeadNone">Main interface coverage  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Door magnetic sensor </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__magnetic_8h.html" title="Door Magnetic Sensor.">rbf_magnetic.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat and input status callbacks  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Indoor PIR sensor </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__indoor__pir_8h.html" title="Indoor PIR motion sensor API — heartbeat, input events, tamper/fault status, and sensitivity configur...">rbf_indoor_pir.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat, motion event, tamper/fault status, sensitivity configuration  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Outdoor PIR sensor </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__outdoor__pir_8h.html" title="Outdoor PIR motion sensor API — heartbeat, input events, tamper/fault status, and sensitivity configu...">rbf_outdoor_pir.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat, motion event, tamper/fault status, sensitivity configuration  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Water leak sensor </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__water__leak_8h.html" title="Water Leak Sensor.">rbf_water_leak.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat and leakage status callbacks  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Emergency button </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__emergency__button_8h.html" title="Emergency Button.">rbf_emergency_button.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat and alarm press callbacks  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Smoke detector </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__smoke_8h.html" title="Smoke sensor.">rbf_smoke.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat and smoke alarm status callbacks  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Temperature and humidity sensor </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__temphumi_8h.html" title="Temperature and humidity sensor API — heartbeat with temp/humi readings, threshold alarms,...">rbf_temphumi.h</a></code> </td><td class="markdownTableBodyNone">Temperature/humidity heartbeat, threshold alarm status, reporting configuration  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Smart plug </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__smartplug_8h.html" title="Smart plug device API — heartbeat with electrical measurements, output status, configuration,...">rbf_smartplug.h</a></code> </td><td class="markdownTableBodyNone">Electrical measurement heartbeat, output status, configuration, on/off/toggle control  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Weak relay </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__relay_8h.html" title="Weak relay device API — heartbeat, output status, configuration, and on/off control.">rbf_relay.h</a></code> </td><td class="markdownTableBodyNone">Output status, configuration, on/off/toggle control  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Wall switch / strong relay </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__wall__switch_8h.html" title="Wall switch (strong relay) device API — heartbeat with electrical measurements, output status,...">rbf_wall_switch.h</a></code> </td><td class="markdownTableBodyNone">Electrical measurement heartbeat, output status, configuration, on/off/toggle control  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Indoor siren </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__indoor__siren_8h.html" title="Indoor siren device API — heartbeat, input status, volume control, alarm action/mode,...">rbf_indoor_siren.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat, tamper/battery status, volume, alarm action/mode, broadcast control  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Outdoor siren / outdoor sounder </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__outdoor__siren_8h.html" title="Outdoor siren device API — heartbeat, input status (power/solar/battery/tamper), volume control,...">rbf_outdoor_siren.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat, power/solar/battery/tamper status, volume, alarm action/mode, broadcast/group control  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">LED keypad </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__keypad_8h.html" title="Keypad device API — heartbeat, alarm status, key input, settings, and action control.">rbf_keypad.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat, alarm status, key input, settings, action control  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Keyfob / remote controller </td><td class="markdownTableBodyNone"><code><a class="el" href="rbf__keyfob_8h.html" title="Remote Control.">rbf_keyfob.h</a></code> </td><td class="markdownTableBodyNone">Heartbeat and key press callbacks  </td></tr>
+</table>
+<p>Some sub-device types are exposed in <code>RBF_dev_type_t</code> for registration and addressing but do not currently have dedicated public control headers, such as water valve, wired-to-wireless converter, and repeater.</p>
 <hr  />
 <h2><a class="anchor" id="autotoc_md19"></a>
 3.7 Broadcasting</h2>
