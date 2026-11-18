@@ -223,6 +223,7 @@ void* cmd_thread(void* arg) {
 
         struct timeval	tv;
         tv.tv_sec = 1;
+        tv.tv_usec = 0;
         int ret = select(maxfd + 1, &fds, NULL, NULL, &tv);
 		if (ret == 0) {
 			continue;

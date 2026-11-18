@@ -27,3 +27,6 @@ target_link_libraries(rbftest
     pthread
     rt
 )
+
+add_executable(rbfclone platform/linux/clone/rbfclone.c)
+target_link_libraries(rbfclone rbf pthread rt)

@@ -115,16 +115,25 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">int</span> <a class="code" href="rbf__magnetic_8h.html#a19edf244b03284b0ba4af4b416263352">rbf_magnetic_register_callbacks</a>(<a class="code" href="structrbf__magnetic__callbacks__t.html">rbf_magnetic_callbacks_t</a>* cbs);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structrbf__magnetic__config__t.html">   83</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    uint8_t alarm_led_disabled;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint8_t tamper_led_disabled;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <a class="code" href="structrbf__magnetic__config__t.html">rbf_magnetic_config_t</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">int</span> rbf_magnetic_set(uint8_t no, <span class="keyword">const</span> <a class="code" href="structrbf__magnetic__config__t.html">rbf_magnetic_config_t</a> *config);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">int</span> rbf_magnetic_update(uint8_t no, <span class="keyword">const</span> <a class="code" href="structrbf__magnetic__config__t.html">rbf_magnetic_config_t</a> *config);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructrbf__magnetic__heartbeat__t_html_a9a612baea5570f6bd6fd2c8320b72f9f"><div class="ttname"><a href="structrbf__magnetic__heartbeat__t.html#a9a612baea5570f6bd6fd2c8320b72f9f">rbf_magnetic_heartbeat_t::power</a></div><div class="ttdeci">uint8_t power</div><div class="ttdef"><b>Definition:</b> rbf_magnetic.h:29</div></div>
+<div class="ttc" id="astructrbf__magnetic__config__t_html"><div class="ttname"><a href="structrbf__magnetic__config__t.html">rbf_magnetic_config_t</a></div><div class="ttdef"><b>Definition:</b> rbf_magnetic.h:83</div></div>
 <div class="ttc" id="astructrbf__magnetic__input__status__t_html_a5101945a4769ad69254529197913629b"><div class="ttname"><a href="structrbf__magnetic__input__status__t.html#a5101945a4769ad69254529197913629b">rbf_magnetic_input_status_t::tamper</a></div><div class="ttdeci">uint8_t tamper</div><div class="ttdef"><b>Definition:</b> rbf_magnetic.h:41</div></div>
 <div class="ttc" id="astructrbf__magnetic__input__status__t_html"><div class="ttname"><a href="structrbf__magnetic__input__status__t.html">rbf_magnetic_input_status_t</a></div><div class="ttdoc">Magnetic sensor input information.</div><div class="ttdef"><b>Definition:</b> rbf_magnetic.h:38</div></div>
 <div class="ttc" id="arbf__magnetic_8h_html_ac2b572012e0b8765243c7c1082ecae89"><div class="ttname"><a href="rbf__magnetic_8h.html#ac2b572012e0b8765243c7c1082ecae89">rbf_magnetic_input_status_update_callback_t</a></div><div class="ttdeci">int(* rbf_magnetic_input_status_update_callback_t)(uint8_t no, rbf_magnetic_input_status_t *input_status)</div><div class="ttdoc">Callback for updating magnetic input status information.</div><div class="ttdef"><b>Definition:</b> rbf_magnetic.h:57</div></div>

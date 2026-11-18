@@ -103,6 +103,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrbf__indoor__pir__config__t.html">rbf_indoor_pir_config_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indoor PIR sensor configuration.  <a href="structrbf__indoor__pir__config__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrbf__indoor__pir__config__ex__t.html">rbf_indoor_pir_config_ex_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrbf__indoor__pir__callbacks__t.html">rbf_indoor_pir_callbacks_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indoor PIR sensor callback functions cluster.  <a href="structrbf__indoor__pir__callbacks__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +137,10 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af7f465d798fde29a52d8678713efad75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbf__indoor__pir_8h.html#af7f465d798fde29a52d8678713efad75">rbf_indoor_pir_set_ex</a> (uint8_t no, const <a class="el" href="structrbf__indoor__pir__config__ex__t.html">rbf_indoor_pir_config_ex_t</a> *config)</td></tr>
+<tr class="separator:af7f465d798fde29a52d8678713efad75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68bc2e79feb918b74f115b3fe0af1d02"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbf__indoor__pir_8h.html#a68bc2e79feb918b74f115b3fe0af1d02">rbf_indoor_pir_update_ex</a> (uint8_t no, const <a class="el" href="structrbf__indoor__pir__config__ex__t.html">rbf_indoor_pir_config_ex_t</a> *config)</td></tr>
+<tr class="separator:a68bc2e79feb918b74f115b3fe0af1d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59851457daed5f5a826b4be22383ec06"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbf__indoor__pir_8h.html#a59851457daed5f5a826b4be22383ec06">rbf_indoor_pir_register_callbacks</a> (<a class="el" href="structrbf__indoor__pir__callbacks__t.html">rbf_indoor_pir_callbacks_t</a> *cbs)</td></tr>
 <tr class="memdesc:a59851457daed5f5a826b4be22383ec06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register indoor PIR sensor callback functions cluster.  <a href="rbf__indoor__pir_8h.html#a59851457daed5f5a826b4be22383ec06">More...</a><br /></td></tr>
 <tr class="separator:a59851457daed5f5a826b4be22383ec06"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -314,6 +320,35 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af7f465d798fde29a52d8678713efad75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f465d798fde29a52d8678713efad75">&#9670;&nbsp;</a></span>rbf_indoor_pir_set_ex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rbf_indoor_pir_set_ex </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>no</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrbf__indoor__pir__config__ex__t.html">rbf_indoor_pir_config_ex_t</a> *&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Queue for the next synchronous broadcast. Returns 0 or -1. </p>
+
+</div>
+</div>
 <a id="a4ac4ba0f703d9692d6435c721010a914"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ac4ba0f703d9692d6435c721010a914">&#9670;&nbsp;</a></span>rbf_indoor_pir_update()</h2>
 
@@ -349,6 +384,35 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int 0: Successfully, -1: Failed </dd></dl>
+
+</div>
+</div>
+<a id="a68bc2e79feb918b74f115b3fe0af1d02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68bc2e79feb918b74f115b3fe0af1d02">&#9670;&nbsp;</a></span>rbf_indoor_pir_update_ex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int rbf_indoor_pir_update_ex </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>no</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structrbf__indoor__pir__config__ex__t.html">rbf_indoor_pir_config_ex_t</a> *&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Send option immediately, then UpdateMe only if the option send succeeded. Success means accepted by the transport, not applied by the device. </p>
 
 </div>
 </div>
