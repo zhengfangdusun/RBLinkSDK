@@ -175,7 +175,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Hub data import/export API (host validation; hardware validation pending). </p>
-<p>The SDK schedules transfers internally. No application polling is required. Data is opaque: the application owns storage and file validation. This API does not promise selective import, merging, or simultaneous cloned hubs. </p>
+<p>Normal-mode callbacks execute on the clone worker (default stack: 64 KiB). Build the SDK with RBF_CLONE_THREAD_STACK_SIZE to override this budget. Keep callbacks bounded; use heap storage or an application queue for large work. The SDK schedules transfers internally. No application polling is required. Data is opaque: the application owns storage and file validation. This API does not promise selective import, merging, or simultaneous cloned hubs. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="abb52561d3f6b24ef28c952c82d435c2c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb52561d3f6b24ef28c952c82d435c2c">&#9670;&nbsp;</a></span>rbf_clone_cancel()</h2>

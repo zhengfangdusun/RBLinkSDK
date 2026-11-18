@@ -143,7 +143,7 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>RB_SDK_REVISION</b>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:ae89ed15118919ef82b583adec7cd8a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcaeee8f31dcbf583a1317324163b01f"><td class="memItemLeft" align="right" valign="top"><a id="afcaeee8f31dcbf583a1317324163b01f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RB_SDK_PATCH</b>&#160;&#160;&#160;0</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RB_SDK_PATCH</b>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:afcaeee8f31dcbf583a1317324163b01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a093fbc8bf5516bce9e821d757fad4b03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rbf__api_8h.html#a093fbc8bf5516bce9e821d757fad4b03">RBF_DEVICE_MAC_LEN</a>&#160;&#160;&#160;(8)</td></tr>
 <tr class="separator:a093fbc8bf5516bce9e821d757fad4b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,7 +190,8 @@ Enumerations</h2></td></tr>
 <br />
 &#160;&#160;<a class="el" href="rbf__api_8h.html#a10eb56611e7dfcea669d631fc85f9a22ac357bf0f525bb3b951c3b14f538be89c">RBF_DEV_TYPE_WIRED_TO_WIRELESS</a> = 16, 
 <a class="el" href="rbf__api_8h.html#a10eb56611e7dfcea669d631fc85f9a22a19191f964f4f6bb856ff669a2351fdee">RBF_DEV_TYPE_REPEATER</a> = 17, 
-<a class="el" href="rbf__api_8h.html#a10eb56611e7dfcea669d631fc85f9a22aa3594009904befd895e35ecd612666ab">RBF_DEV_TYPE_UNKNOW</a>
+<a class="el" href="rbf__api_8h.html#a10eb56611e7dfcea669d631fc85f9a22aa3594009904befd895e35ecd612666ab">RBF_DEV_TYPE_UNKNOW</a> = 18, 
+<a class="el" href="rbf__api_8h.html#a10eb56611e7dfcea669d631fc85f9a22a644c562d55ab65794d19a4ff8488f8c4">RBF_DEV_TYPE_MAGNETIC2</a> = 19
 <br />
  }</td></tr>
 <tr class="memdesc:a10eb56611e7dfcea669d631fc85f9a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">RBF sub-device types.  <a href="rbf__api_8h.html#a10eb56611e7dfcea669d631fc85f9a22">More...</a><br /></td></tr>
@@ -469,6 +470,8 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a10eb56611e7dfcea669d631fc85f9a22a19191f964f4f6bb856ff669a2351fdee"></a>RBF_DEV_TYPE_REPEATER&#160;</td><td class="fielddoc"><p>Repeater </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a10eb56611e7dfcea669d631fc85f9a22aa3594009904befd895e35ecd612666ab"></a>RBF_DEV_TYPE_UNKNOW&#160;</td><td class="fielddoc"><p>Unknown device </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a10eb56611e7dfcea669d631fc85f9a22a644c562d55ab65794d19a4ff8488f8c4"></a>RBF_DEV_TYPE_MAGNETIC2&#160;</td><td class="fielddoc"><p>New door sensor; use rbf_magnetic2_* </p>
 </td></tr>
 </table>
 
@@ -1372,11 +1375,11 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <div class="ttc" id="arbf__api_8h_html_a8e4bcf31e836b242026b68ac7099498d"><div class="ttname"><a href="rbf__api_8h.html#a8e4bcf31e836b242026b68ac7099498d">rbf_stop_rssi</a></div><div class="ttdeci">int rbf_stop_rssi(RBF_dev_id_t *ids, unsigned char count)</div><div class="ttdoc">Disable RSSI broadcast.</div></div>
 <div class="ttc" id="arbf__api_8h_html_ad74a01a514b4c2514ab78d5c38d35eff"><div class="ttname"><a href="rbf__api_8h.html#ad74a01a514b4c2514ab78d5c38d35eff">rbf_start_findme</a></div><div class="ttdeci">int rbf_start_findme(RBF_dev_id_t *ids, unsigned char count)</div><div class="ttdoc">Enable Find Me broadcast.</div></div>
-<div class="ttc" id="astructRBF__dev__id__t_html"><div class="ttname"><a href="structRBF__dev__id__t.html">RBF_dev_id_t</a></div><div class="ttdoc">Sub-device ID addressed by device category and device registration number.</div><div class="ttdef"><b>Definition:</b> rbf_api.h:78</div></div>
+<div class="ttc" id="astructRBF__dev__id__t_html"><div class="ttname"><a href="structRBF__dev__id__t.html">RBF_dev_id_t</a></div><div class="ttdoc">Sub-device ID addressed by device category and device registration number.</div><div class="ttdef"><b>Definition:</b> rbf_api.h:79</div></div>
 <div class="ttc" id="arbf__api_8h_html_ab4728741ee7a5c0f45e22235608eda0fa00ceca5e7c2f07645300e9e27948100d"><div class="ttname"><a href="rbf__api_8h.html#ab4728741ee7a5c0f45e22235608eda0fa00ceca5e7c2f07645300e9e27948100d">RBF_DEV_IO</a></div><div class="ttdeci">@ RBF_DEV_IO</div><div class="ttdef"><b>Definition:</b> rbf_api.h:37</div></div>
 <div class="ttc" id="arbf__api_8h_html_ab2c856231070b18fdf4ac229d89f2ceb"><div class="ttname"><a href="rbf__api_8h.html#ab2c856231070b18fdf4ac229d89f2ceb">rbf_stop_findme</a></div><div class="ttdeci">int rbf_stop_findme(RBF_dev_id_t *ids, unsigned char count)</div><div class="ttdoc">Disable Find Me broadcast.</div></div>
 <div class="ttc" id="arbf__api_8h_html_a7d8b6e1f14bddf734a01dfb312f4918e"><div class="ttname"><a href="rbf__api_8h.html#a7d8b6e1f14bddf734a01dfb312f4918e">rbf_start_rssi</a></div><div class="ttdeci">int rbf_start_rssi(RBF_dev_id_t *ids, unsigned char count)</div><div class="ttdoc">Enable RSSI broadcast, increase the frequency of sending heartbeats for the device....</div></div>
-<div class="ttc" id="astructRBF__dev__id__t_html_aaf5e4dd26e2e377d4248c1e2ddb8f710"><div class="ttname"><a href="structRBF__dev__id__t.html#aaf5e4dd26e2e377d4248c1e2ddb8f710">RBF_dev_id_t::no</a></div><div class="ttdeci">unsigned char no</div><div class="ttdef"><b>Definition:</b> rbf_api.h:81</div></div>
+<div class="ttc" id="astructRBF__dev__id__t_html_aaf5e4dd26e2e377d4248c1e2ddb8f710"><div class="ttname"><a href="structRBF__dev__id__t.html#aaf5e4dd26e2e377d4248c1e2ddb8f710">RBF_dev_id_t::no</a></div><div class="ttdeci">unsigned char no</div><div class="ttdef"><b>Definition:</b> rbf_api.h:82</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
